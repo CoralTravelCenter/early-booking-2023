@@ -56,3 +56,39 @@ window.DEBUG = 'APP NAME'
 
 ASAP ->
 
+    $('body .subpage-search-bg > .background').append $('#_intro_markup').html()
+
+    responsiveHandler = (query, match_handler, unmatch_handler) ->
+        layout = matchMedia query
+        layout.addEventListener 'change', (e) ->
+            if e.matches then match_handler() else unmatch_handler()
+        if layout.matches then match_handler() else unmatch_handler()
+        layout
+
+    responsiveHandler '(max-width:768px)',
+        ->
+            $player_el = $('.hidden-on-desktop[data-vimeo-id]')
+            if $player_el.length
+                p = new Vimeo.Player $player_el.get(0),
+                    id: $player_el.attr('data-vimeo-id')
+                    background: 1
+                    playsinline: 1
+                    autopause: 0
+                    title: 0
+                    byline: 0
+                    portrait: 0
+                p.on 'play', ->
+                    $player_el.addClass 'playback'
+        ->
+            $player_el = $('.hidden-on-mobile[data-vimeo-id]')
+            if $player_el.length
+                p = new Vimeo.Player $player_el.get(0),
+                    id: $player_el.attr('data-vimeo-id')
+                    background: 1
+                    playsinline: 1
+                    autopause: 0
+                    title: 0
+                    byline: 0
+                    portrait: 0
+                p.on 'play', ->
+                    $player_el.addClass 'playback'

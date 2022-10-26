@@ -1,0 +1,235 @@
+@import "../../common/css/common";
+
+#site-wrap {
+	section {
+		> .contenu {
+
+		}
+
+		&.intro {
+
+		}
+
+		&.more-about {
+			margin-top: 3%;
+			>.contenu {
+				p {
+					max-width: 60em;
+					margin: 0 auto;
+					font-size: 1.2em;
+					text-align: center;
+					@media screen and (max-width: @mobile-breakpoint) {
+						padding: 0 2em;
+					}
+				}
+				.actions {
+					.flex-center;
+					margin-top: 2em;
+				}
+			}
+		}
+
+		&.benefits {
+			>.contenu {
+				.benefit-list {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+					>*{
+						flex: 1 1 20%;
+						.flex-column;
+						padding: 2em;
+						align-items: center;
+						text-align: center;
+						@media screen and (max-width: @mobile-breakpoint) {
+						    flex: 1 1 50%;
+						}
+						.icon {
+							.proportional(1/1);
+							width: 8em;
+							max-width: 132px;
+							background: center no-repeat;
+							background-size: contain;
+						}
+						.label {
+							margin-top: 1em;
+							a {
+								font-family: inherit;
+								font-size: inherit;
+								line-height: inherit;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.terms-and-conditions {
+			>.contenu {
+				.tc {
+					background-color: white;
+					padding: 2em;
+					border-radius: 1em;
+					.list-items {
+						display: flex;
+						justify-content: center;
+						font-size: 1.2em;
+						@media screen and (max-width: 1440px) {
+							font-size: 1vw;
+						}
+						@media screen and (max-width: @mobile-breakpoint) {
+							flex-wrap: wrap;
+							font-size: 3.5vw;
+						}
+						.item {
+							.flex-column;
+							align-items: center;
+							text-align: center;
+							padding: 0 2em;
+							line-height: 1.2;
+							@media screen and (max-width: @mobile-breakpoint) {
+								padding: 1em;
+							}
+							h4 {
+								font-size: 1.5em;
+								margin-bottom: .5em;
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+}
+
+body .subpage-search-bg {
+	> .background {
+		.reset;
+		position: relative;
+		&:before {
+			content: unset;
+		}
+		.video-box {
+			.proportional(1728/640);
+			width: 100%;
+			@media screen and (max-width: @mobile-breakpoint) {
+				.proportional(720/900);
+			}
+
+			.backdrop {
+				background: url("../iii/intro-backdrop-desktop.jpg") center no-repeat;
+				background-size: cover;
+				@media screen and (max-width: @mobile-breakpoint) {
+					background-image: url(../iii/intro-backdrop-mobile.jpg);
+				}
+			}
+
+			.vimeo-wrap {
+				opacity: 0;
+				.transit(opacity, 1s);
+				&.playback {
+					opacity: 1;
+				}
+				iframe {
+					.abs100x100;
+				}
+			}
+
+			video {
+				object-fit: cover;
+			}
+
+			.info-overlay {
+				.msg {
+					.flex-column;
+					justify-content: center;
+					position: absolute;
+					width: 45em;
+					left: 50%;
+					transform: translateX(-682px);
+					height: 100%;
+					padding: 6% 0 0;
+					color: white;
+					font-weight: normal;
+					@media screen and (max-width: 1439px) {
+						transform: translateX(-564px);
+						font-size: 0.8vw;
+					}
+					@media screen and (max-width: 1199px) {
+						padding-top: 10%;
+						transform: none;
+						left: 5%;
+					}
+					@media screen and (max-width: @mobile-breakpoint) {
+						width: 100%;
+						text-align: center;
+						left: 0;
+						height: auto;
+						font-size: 2.2vw;
+						padding: 12% 5% 0;
+					}
+					h2, h3, h4 {
+						color: inherit;
+						margin: 0.3em 0;
+						line-height: 1.1;
+					}
+					h2 {
+						font-size: 3.5em;
+						font-weight: bold;
+					}
+					h3 {
+						font-size: 1.75em;
+					}
+					h4 {
+						font-size: 1.75em;
+						font-weight: normal;
+					}
+					.note {
+						position: absolute;
+						left: 0;
+						bottom: 2%;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	.searchtabsmain {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
+	.bcrumb {
+		display: none!important;
+	}
+}
+
+.widgetcontainer:nth-of-type(2) {
+	//background-color: #84B524;
+	.flex-column;
+	align-items: center;
+	padding: 3% 30px;
+	@media screen and (max-width: @mobile-breakpoint) {
+		padding: 5% 30px;
+	}
+	//&:before {
+	//	content: 'Отели с концепцией Sun Family Club';
+	//	font-size: 3em;
+	//	margin-bottom: 1em;
+	//	color: white;
+	//	text-align: center;
+	//}
+	#hotels-set {
+		width: 100%;
+		max-width: 1280px;
+		margin: auto;
+	}
+}
+
+#hotels-set {
+	width: 100%;
+	max-width: 1280px;
+	margin: auto;
+}

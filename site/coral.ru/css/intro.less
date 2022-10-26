@@ -66,6 +66,7 @@
 		}
 
 		&.terms-and-conditions {
+			position: relative;
 			background: url("../iii/visual-01-desktop.jpg") center no-repeat;
 			background-size: auto 100%;
 			margin-bottom: 5em;
@@ -81,7 +82,7 @@
 			}
 			.tc {
 				position: absolute;
-				bottom: 0;
+				bottom: -5em;
 				left: 50%;
 				transform: translateX(-50%);
 				.flex-column;
@@ -89,6 +90,12 @@
 				background-color: white;
 				padding: 2em;
 				border-radius: 1em;
+				@media screen and (max-width: @mobile-breakpoint) {
+					bottom: -16em;
+				}
+				@media screen and (max-width: @narrow-breakpoint) {
+					bottom: -14em;
+				}
 				.heading {
 					font-size: 2em;
 					margin-bottom: 1em;
@@ -235,21 +242,20 @@ body .subpage-search-bg {
 }
 
 .widgetcontainer:nth-of-type(2) {
-	background-color: #84B524;
+	//background-color: #84B524;
 	.flex-column;
 	align-items: center;
 	padding: 3% 30px;
 	@media screen and (max-width: @mobile-breakpoint) {
 		padding: 5% 30px;
 	}
-	&:before {
-		content: 'Отели с концепцией Sun Family Club';
-		//font-weight: bold;
-		font-size: 3em;
-		margin-bottom: 1em;
-		color: white;
-		text-align: center;
-	}
+	//&:before {
+	//	content: 'Отели с концепцией Sun Family Club';
+	//	font-size: 3em;
+	//	margin-bottom: 1em;
+	//	color: white;
+	//	text-align: center;
+	//}
 	#hotels-set {
 		width: 100%;
 		max-width: 1280px;

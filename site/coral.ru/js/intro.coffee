@@ -90,3 +90,22 @@ ASAP ->
                 portrait: 0
             p.on 'play', ->
                 $player_el.addClass 'playback'
+
+    $(document).on 'click', '[data-year-month]', () ->
+        $this = $(this)
+        year_month = $this.attr 'data-year-month'
+        [m,month] = year_month.match /\d{4}-(\d{2})/
+        goal_name = [
+            'ran-juan',
+            'ran-feb',
+            'ran-mart',
+            'ran-april',
+            'ran-may',
+            'ran-jun',
+            'ran-jul',
+            'ran-avg',
+            'ran-sept',
+            'ran-okt',
+            'ran-nov',
+            'ran-dec'][Number(month)-1]
+        ym?(553380, 'reachGoal', goal_name)

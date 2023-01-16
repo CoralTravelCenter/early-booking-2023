@@ -140,7 +140,7 @@ ASAP(function() {
     }
     return layout;
   };
-  return responsiveHandler('(max-width:768px)', function() {
+  responsiveHandler('(max-width:768px)', function() {
     var $player_el, p;
     $player_el = $('.hidden-on-desktop[data-vimeo-id]');
     p = new Vimeo.Player($player_el.get(0), {
@@ -170,5 +170,13 @@ ASAP(function() {
     return p.on('play', function() {
       return $player_el.addClass('playback');
     });
+  });
+  return $(document).on('click', '[data-year-month]', function() {
+    var $this, goal_name, m, month, ref, year_month;
+    $this = $(this);
+    year_month = $this.attr('data-year-month');
+    ref = year_month.match(/\d{4}-(\d{2})/), m = ref[0], month = ref[1];
+    goal_name = ['ran-juan', 'ran-feb', 'ran-mart', 'ran-april', 'ran-may', 'ran-jun', 'ran-jul', 'ran-avg', 'ran-sept', 'ran-okt', 'ran-nov', 'ran-dec'][Number(month) - 1];
+    return typeof ym === "function" ? ym(553380, 'reachGoal', goal_name) : void 0;
   });
 });
